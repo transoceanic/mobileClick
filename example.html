@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="mobileClick.js"></script>
+	</head>
+	<body>
+		<button id="mobileclickBtn">Mobile Click</button>
+		<button id="clickBtn">Standard Click</button>
+        
+		<div id="output"></div>
+        
+		<script>
+			$('#mobileclickBtn').bind('mobileclick', output('No Click Delay'));
+			$('#clickBtn').bind('click', output('Standard Click'));
+            
+			function output(text) {
+				return function() {
+					$('#output').text(text);
+				}
+			}
+            </script>
+	</body>
+</html>
